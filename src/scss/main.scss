@@ -1,0 +1,163 @@
+// stylelint-disable at-rule-empty-line-before
+
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "sprites";
+@import "fonts";
+@import "vendor";
+@import "base";
+@import "helpers";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-roboto;
+    background-color: #f0f0f0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.wrapper { 
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   z-index: 1;
+   align-items: center;
+}
+
+.block {
+    top: 60px;
+    color: #7a7a7a;
+    max-width: 660px;
+    min-width: 660px;
+    background: url(../images/background-img.png);
+    display: grid;
+    padding: 2em 1em 0 1em;
+    box-sizing: border-box;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 20px; 
+    grid-template-rows: auto;
+    z-index: 1;
+    position: relative;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+
+.user-avatar {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 140px;
+    background: url(../images/user-avatar.jpg);
+    z-index: 10;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 0% 14%;
+}
+
+.user-form {
+    grid-column-start: 3;
+    grid-column-end: 9;
+    margin-top: -2px;
+    text-transform: uppercase;
+    font-size: 13px; 
+}
+
+.user-form__item {
+    margin-bottom: 31px;
+   border-bottom: 2px solid #333333;
+   padding-bottom: 8px;
+}
+
+.approved {
+    position: absolute;
+    background-image: url(../images/Approved.png);
+    height: 166px;
+    width: 197px;
+    right: 2px;
+    top: 79px;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.skill {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -23px;
+}
+
+@for $i from 1 through 4 {
+    .col-#{$i} {
+        grid-column-start: $i + ($i - 1);
+        grid-column-end: $i + ($i + 1);
+    }
+  }
+
+  .checkbox {
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      font-size: 13px;
+      letter-spacing: 0.9px;
+      margin-bottom: 40px;
+  }
+
+  .checkbox__input {
+    width: 18px;
+    height: 18px;
+    background: #eeeeee;
+    border-radius: 5px;
+    margin-right: 6px;
+  }
+
+  .checkbox__label {
+    padding-top: 2px;
+  }
+
+  .skill-metr {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-image: url(../images/skill-metr.png);
+    width: 253px;
+    height: 127px;
+    position: relative;
+    margin-top: 31px;
+    margin-bottom: 58px;
+  }
+
+  .arrow {
+      background-image: url(../images/arrow.png);
+      width: 59px;
+      height: 39px;
+      grid-column-start: 2;
+    grid-column-end: 3;
+    position: absolute;
+    bottom: 58px;
+  }
+
+  .skill-result {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    margin-top: 31px;
+  }
+
+  .counter {
+    color: #0093d7;
+    font-weight: 800;
+    font-size: 50px;
+    margin-top: 11px;
+  }

@@ -1,0 +1,52 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+
+mixin checkbox(name) 
+	.checkbox
+		.checkbox__input
+		.checkbox__label=name
+
+block content
+	.wrapper 
+		.block 
+			.user-avatar
+			ul.user-form 
+				li.user-form__item Островская Александра Евгеньевна
+				li.user-form__item 09.01.1995
+				li.user-form__item Москва
+				li.user-form__item +7 977 261 43 54
+			.approved
+		.block
+			h3.header Навыки
+		
+			.col.col-1
+				+checkbox('HTML5')
+				+checkbox('CSS3')
+				+checkbox('БЭМ')
+			.col.col-2
+				+checkbox('SASS')
+				+checkbox('LESS')
+				+checkbox('GULP')
+			.col.col-3
+				+checkbox('VANILLAJS')
+				+checkbox('ANGULAR')
+				+checkbox('JQUERY')
+			.col.col-4
+				+checkbox('GIT')
+				+checkbox('FOUNDATION')
+				+checkbox('BOOTSTRAP')
+		.block
+			.skill-metr
+			.arrow
+			.skill-result
+				h3.header Мой уровень владения 
+				.skill JavaScript
+				.counter 100
+
+				
+					
+		
