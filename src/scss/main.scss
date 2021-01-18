@@ -86,14 +86,15 @@ ul {
     top: 79px;
 }
 
-.header {
+.header,
+.skill-result__header {
     grid-column-start: 1;
     grid-column-end: 9;
     color: black;
     margin-bottom: 25px;
 }
 
-.skill {
+.skill-result__skill {
     color: black;
     font-size: 20px;
     font-weight: 700;
@@ -101,7 +102,7 @@ ul {
 }
 
 @for $i from 1 through 4 {
-    .col-#{$i} {
+    .col__col-#{$i} {
         grid-column-start: $i + ($i - 1);
         grid-column-end: $i + ($i + 1);
     }
@@ -116,12 +117,30 @@ ul {
       margin-bottom: 40px;
   }
 
+  .checkbox:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
   .checkbox__input {
     width: 18px;
     height: 18px;
     background: #eeeeee;
     border-radius: 5px;
     margin-right: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .checkbox__input:checked {
+    background: #0093d7 url(../images/tick.png);
+    background-repeat: no-repeat;
+    background-position: 100% 40%;
+  }
+
+  .checkbox__input:focus {
+    outline: none;
   }
 
   .checkbox__label {
@@ -140,14 +159,19 @@ ul {
   }
 
   .arrow {
-      background-image: url(../images/arrow.png);
-      width: 59px;
-      height: 39px;
-      grid-column-start: 2;
+    background-image: url(../images/arrow.png);
+    width: 120px;
+    height: 24px;
+    -ms-grid-column: 2;
+    grid-column-start: 2;
+    -ms-grid-column-span: 1;
     grid-column-end: 3;
     position: absolute;
-    bottom: 58px;
-  }
+    bottom: 49px;
+    background-repeat: no-repeat;
+    left: -12px;
+    transition: transform 0.8s cubic-bezier(1,-0.26, 0, 1.54);
+}
 
   .skill-result {
     grid-column-start: 5;
@@ -155,9 +179,14 @@ ul {
     margin-top: 31px;
   }
 
-  .counter {
+  .skill-result__counter {
     color: #0093d7;
     font-weight: 800;
     font-size: 50px;
     margin-top: 11px;
+  }
+
+  .col, 
+  .skill-result {
+    user-select: none;
   }

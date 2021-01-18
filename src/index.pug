@@ -1,52 +1,49 @@
 extends pug/base
 
 prepend vars
-	//-
+	- title = 'Test Ninelines'
+	- description = 'Ostrovskaya Alexandra layout'
 
 append vars
-
-mixin checkbox(name) 
+mixin checkbox(name, checked)
 	.checkbox
-		.checkbox__input
-		.checkbox__label=name
+		input.checkbox__input(type="checkbox", checked=checked, id=name)
+		label.checkbox__label(for=name)=name
 
 block content
-	.wrapper 
-		.block 
+	.wrapper
+		.block
 			.user-avatar
-			ul.user-form 
+			ul.user-form
 				li.user-form__item Островская Александра Евгеньевна
 				li.user-form__item 09.01.1995
 				li.user-form__item Москва
 				li.user-form__item +7 977 261 43 54
 			.approved
+
 		.block
 			h3.header Навыки
-		
-			.col.col-1
-				+checkbox('HTML5')
-				+checkbox('CSS3')
-				+checkbox('БЭМ')
-			.col.col-2
-				+checkbox('SASS')
+			.col.col__col-1
+				+checkbox('HTML5', true)
+				+checkbox('CSS3', true)
+				+checkbox('БЭМ', true)
+			.col.col__col-2
+				+checkbox('SASS', true)
 				+checkbox('LESS')
 				+checkbox('GULP')
-			.col.col-3
-				+checkbox('VANILLAJS')
+			.col.col__col-3
+				+checkbox('VANILLAJS', true)
 				+checkbox('ANGULAR')
-				+checkbox('JQUERY')
-			.col.col-4
-				+checkbox('GIT')
+				+checkbox('JQUERY', true)
+			.col.col__col-4
+				+checkbox('GIT', true)
 				+checkbox('FOUNDATION')
-				+checkbox('BOOTSTRAP')
+				+checkbox('BOOTSTRAP', true)
+
 		.block
 			.skill-metr
 			.arrow
 			.skill-result
-				h3.header Мой уровень владения 
-				.skill JavaScript
-				.counter 100
-
-				
-					
-		
+				h3.skill-result__header Мой уровень владения
+				.skill-result__skill JavaScript
+				.skill-result__counter
